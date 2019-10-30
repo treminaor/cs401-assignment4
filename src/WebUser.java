@@ -30,8 +30,9 @@ public class WebUser extends Customer {
 	 * @param c Account to use as base.
 	 * @param p Password to use for this WebUser.
 	 */
-	public WebUser(Account c, String p) {
-		login_id = c.getID();
+	public WebUser(Account c, String u, String p) {
+		login_id = u;
+		super.setID(u);
 		password = p;
 		state = UserState.New;
 	}
@@ -55,6 +56,14 @@ public class WebUser extends Customer {
 	 */
 	public void setBanned() {
 		state = UserState.Banned;
+	}
+	
+	/**
+	 * Get current UserState of this WebUser.
+	 * @return UserState enum
+	 */
+	public UserState getState() {
+		return state;
 	}
 	
 	public String toString() {

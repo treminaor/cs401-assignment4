@@ -94,6 +94,14 @@ public class Account {
 		if(main.whitebox) System.out.println("getCart(): " + cart);
 		return cart;
 	}
+
+	/**
+	 * Override Account's default ID with a new String. 
+	 * @param i New ID
+	 */
+	public void setID(String i) {
+		id = i;
+	}
 	
 	/**
 	 * 
@@ -102,6 +110,14 @@ public class Account {
 	public void setBillingAddress(Address a) {
 		if(main.whitebox) System.out.println("setBillingAddress(address): " + a);
 		billing_address = a;
+	}
+
+	/**
+	 * Get the amount of orders stored within this Account.
+	 * @return int ordersSize
+	 */
+	public int getOrdersSize() {
+		return ordersSize;
 	}
 	
 	/**

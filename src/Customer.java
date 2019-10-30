@@ -61,10 +61,12 @@ public class Customer extends Account {
 	 */
 	public WebUser registerAsWebUser() {
 		Scanner scan = new Scanner(System.in);
+		System.out.println(this + ", please choose a username: ");
+		String username = scan.nextLine();
 		System.out.println(this + ", please finish your registration by entering a password: ");
 		String password = scan.nextLine();
 		scan.close();
-		return new WebUser(this, password);
+		return new WebUser(this, username, password);
 	}
 	
 	public String toString() {

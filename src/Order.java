@@ -80,11 +80,47 @@ public class Order {
 	}
 	
 	/**
+	 * Gets order number of this Order.
+	 * @return String number
+	 */
+	public String getNumber() {
+		return number;
+	}
+	
+	/**
 	 * Gets current status of this Order.
 	 * @return OrderStatus enum
 	 */
 	public OrderStatus getStatus() {
 		return status;
+	}
+	
+	/**
+	 * Mark this Order as Closed.
+	 */
+	public void setClosed() {
+		status = OrderStatus.Closed;
+	}
+	
+	/**
+	 * Mark this Order as Delivered.
+	 */
+	public void setDelivered() {
+		status = OrderStatus.Delivered;
+	}
+	
+	/**
+	 * Mark this Order as Hold.
+	 */
+	public void setHold() {
+		status = OrderStatus.Hold;
+	}
+	
+	/**
+	 * Mark this Order as shipped.
+	 */
+	public void setShipped() {
+		status = OrderStatus.Shipped;
 	}
 	
 	public String toString() {
@@ -93,6 +129,9 @@ public class Order {
 			out += (line_items[i] + "\n");
 		}
 		out += "Payments: \n";
+		if(paymentsSize == 0)
+			out += "None. \n";
+		
 		for(int i=0; i<paymentsSize; i++) {
 			out += (payments[i] + "\n");
 		}

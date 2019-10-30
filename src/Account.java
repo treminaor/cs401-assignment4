@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * @author Andy King
- *
+ * @apiNote Account is the base class for all user types (Account, Customer, WebUser). Account can own one instance of ShoppingCart and unlimited (100) instances of Order.
  */
 
 
@@ -27,7 +27,7 @@ public class Account {
 	 * Create unique sequential ID
 	 * @return String id
 	 */
-	public static synchronized String createID() {
+	private static synchronized String createID() {
 	    return String.valueOf(idCounter++);
 	}    
 	
@@ -77,6 +77,14 @@ public class Account {
 	public String getID() {
 		if(main.whitebox) System.out.println("getID(): " + id);
 		return id;
+	}
+	
+	/**
+	 * List of all Orders owned by this Account
+	 * @return Order[] orders
+	 */
+	public Order[] getOrders() {
+		return orders;
 	}
 	
 	/** 

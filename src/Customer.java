@@ -7,18 +7,26 @@ import java.util.Scanner;
 
 /**
  * @author Andy King
- *
+ * @apiNote Customer extends Account. Customer can own one instance of ShoppingCart or unlimited (100) of Order because of inheritance from Account.
  */
 public class Customer extends Account {
 	private Address address;
 	private Phone phone;
 	private String email;
 	
+	/**
+	 * Create empty instance of Customer (uses parent Account billing_address as shipping adddress)
+	 */
 	public Customer() {
 		super();
 		address = super.getBillingAddress();
 	}
 	
+	/**
+	 * Create instance of Customer.
+	 * @param p Phone
+	 * @param e Email
+	 */
 	public Customer(Phone p, String e) {
 		super();
 		address = super.getBillingAddress();
@@ -26,6 +34,12 @@ public class Customer extends Account {
 		email = e;
 	}
 	
+	/**
+	 * Create instance of Customer using WebUser login_id as unique id
+	 * @param webuser_login_id
+	 * @param p Phone
+	 * @param e Email
+	 */
 	public Customer(String webuser_login_id, Phone p, String e) {
 		super(webuser_login_id);
 		address = super.getBillingAddress();
@@ -33,14 +47,23 @@ public class Customer extends Account {
 		email = e;
 	}
 	
+	/**
+	 * Set shipping address for this Customer
+	 * @param a Address
+	 */
 	public void setShippingAddress(Address a) {
 		address = a;
 	}
 	
+	/** 
+	 * Register this Customer as a WebUser. Prompts user for password.
+	 * @return WebUser
+	 */
 	public WebUser registerAsWebUser() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println(this + ", please finish your registration by entering a password: ");
 		String password = scan.nextLine();
+		scan.close();
 		return new WebUser(this, password);
 	}
 	

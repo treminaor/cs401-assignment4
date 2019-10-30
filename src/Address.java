@@ -4,7 +4,7 @@
 
 /**
  * @author Andy King
- *
+ * @apiNote Address stores the full address with each part stored as a separate string.
  */
 public class Address {
 	private String street;

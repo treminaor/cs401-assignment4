@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * @author Andy King
- *
+ * @apiNode Payment belongs to exactly one instance of Account and is applied towards the total amount within instance(s) of Order which are owned by Account.
  */
 public class Payment {
 	private String id;
@@ -16,12 +16,17 @@ public class Payment {
 	private Account account;
 	
 	private static long idCounter = 0;
-	public static synchronized String createID() {
+	
+	/**
+	 * Create unique sequential ID
+	 * @return String id
+	 */
+	private static synchronized String createID() {
 	    return String.valueOf(idCounter++);
 	}   
 	
 	/**
-	 * 
+	 * Create instance of Payment.
 	 * @param a Account which submitted the payment
 	 * @param t Payment total
 	 * @param d	Any details regarding the payment

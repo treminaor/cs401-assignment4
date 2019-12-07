@@ -2,7 +2,7 @@
 CSUEB CS-401 Software Development SP2019
 
 ### Assignment Instructions:
-Create a Java program from the following UML class diagram.
+#### PART 1 Create a Java program from the UML class diagram.
 
 ![GitHub Project Screenshot](screenshots/uml.png)
 
@@ -28,7 +28,8 @@ Demonstrate the functionality and features using a command-line interface. No GU
 database connectivity is required. You may use any technique to store the temporary data used
 in the program. You may also be creative and add more features if you wish. Do not change the
 theme of the program.
-PART 2: Traceability and Testing
+
+#### PART 2: Traceability and Testing
 - Comment in the source code to identify where all features are implemented. Note: You
 don’t need to use a numbering system, but you may optionally provide a traceability
 matrix and/or add a numbering system for the features and comments.

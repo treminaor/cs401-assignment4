@@ -1,6 +1,9 @@
 # Java Program created from UML Diagram
 CSUEB CS-401 Software Development SP2019
 
+### Notes
+- White and Black Box test cases are located in main.java
+
 ### Assignment Instructions:
 #### PART 1 Create a Java program from the UML class diagram.
 
